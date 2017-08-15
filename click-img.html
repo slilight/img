@@ -3,10 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
+    <style>
+        #bgimg{
+            width: 300px;
+            height: 300px;
+            background: cadetblue;
+        }
+    </style>
 </head>
 <body>
    <div id="bgimg">
-
+      <img src="images/2.jpg">
    </div>
 </body>
+<script>
+   function imgid(id){
+        document.getElementById(id)
+    }
+   function  imgName(name){
+       document.getElementsByTagName(name)
+   }
+    var lable=imgid("bgimg");
+    var name=imgName("img")
+   function gainStyle(obj,attr){
+       if(document.all){
+           return parseInt(obj.currentStyle[attr]);
+       }
+       else {
+           return parseInt(getComputedStyle(obj,false)[attr]);
+       }
+   }
+   name.addEventListener("click",function (){
+       zoomIn();
+   },true)
+   name.addEventListener("click",function (){
+       zoomOut();
+   },true)
+//   var zoomLevel = 0;
+//   var currentWidth = 0;
+//   var currentHeight = 0;
+//   var originalWidth = 0;
+//   var originalHeight = 0;
+//   function initial(){
+//       originalWidth = currentWidth;
+//       originalHeight = currentHeight;
+//       update();
+//   }
+//   function zoomIn(){
+//       currentWidth = document.myImage.width;
+//       currentHeight = document.myImage.height;
+//
+//       document.myImage.width = currentWidth*1.2;
+//       document.myImage.height = currentHeight*1.2;
+//       zoomLevel = zoomLevel + 1;
+//       update();
+//   }
+//   function zoomOut(){
+//       currentWidth = document.myImage.width;
+//       currentHeight = document.myImage.height;
+//       document.myImage.width = currentWidth/1.2;
+//       document.myImage.height = currentHeight/1.2;
+//       zoomLevel = zoomLevel - 1;
+//       update();
+//   }
+//   function resetImage(){
+//       document.myImage.width = originalWidth;
+//       document.myImage.height = originalHeight;
+//       zoomLevel = 0;
+//       update();
+//   }
+//   function update(){
+//       currentWidth = document.myImage.width;
+//       currentHeight = document.myImage.height;
+//       zoomsize.innerText = zoomLevel;
+//       imgsize.innerText = currentWidth + "X" + currentHeight;
+//   }
+
+</script>
 </html>
